@@ -17,9 +17,9 @@ export class AssociationsController {
     return this.associationsService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.associationsService.findOne(+id);
+  @Get('/:id')
+  findOne(@Param('id') params) {
+    return this.associationsService.findOne(params);
   }
 
   // @Put(':id')
@@ -27,7 +27,7 @@ export class AssociationsController {
   //   return this.associationsService.update(+id, updateAssociationDto);
   // }
 
-  @Delete(':id')
+  @Delete('/:id')
   remove(@Param('id') id: string) {
     return this.associationsService.remove(+id);
   }

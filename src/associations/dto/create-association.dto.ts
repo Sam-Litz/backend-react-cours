@@ -1,1 +1,3 @@
-export class CreateAssociationDto {}
+export class CreateAssociationDto {
+  readonly nom: string;
+}
