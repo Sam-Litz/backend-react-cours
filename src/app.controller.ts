@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Request, Response, UseGuards } from '@nestjs/common';
 import { AppService } from './app.service';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
 
@@ -11,10 +11,16 @@ export class AppController {
     return this.appService.getHello();
   }
 
+  // @UseGuards(JwtAuthGuard)
+  @Get('profile')
+  getPorifle(){
+    return 'ici';
+  }
+
   @UseGuards(JwtAuthGuard)
-  @Get('/profile')
-  getPorifle(@Request() req){
-    return req;
+  @Get('test')
+  gettest(){
+    return 'ici';
   }
   
 }
